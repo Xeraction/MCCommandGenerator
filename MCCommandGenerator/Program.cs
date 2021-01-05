@@ -8,14 +8,14 @@ namespace MCCommandGenerator
 {
     static class Program
     {
-        public static string Version = "EarlyAlpha-0.3";
+        public static string Version = "EarlyAlpha-0.4";
         public static bool IsDownloading = false;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Update.CheckForUpdates();
+            //Update.CheckForUpdates();
             if (!IsDownloading) Application.Run(new Form1());
         }
     }

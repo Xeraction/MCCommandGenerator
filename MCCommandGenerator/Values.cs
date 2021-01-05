@@ -8,7 +8,16 @@ namespace MCCommandGenerator
 {
     public static class Values
     {
+        //Commands
+        public static short Command = -1;
+        //Advancement
+        public static bool AdvancementGive = false;
+        public static bool AdvancementRemove = false;
+        public static bool AdvancementSelector = false;
+        public static bool AdvancementShowAdvancements = false;
+        public static bool AdvancementShowRecipes = false;
         // Selector
+        public static short Selector = -1;
         public static short SelectorAdvancement = -1;
         public static bool SelectorAdvancementTrue = false;
         public static bool SelectorAdvancementFalse = false;

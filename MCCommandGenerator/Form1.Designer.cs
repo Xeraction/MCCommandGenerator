@@ -27,22 +27,24 @@ namespace MCCommandGenerator
 
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.AlphaLabel = new System.Windows.Forms.Label();
+            checkBox1 = new System.Windows.Forms.CheckBox();
+            checkBox2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(MCCommandGenerator.Text.Commands);
-            this.comboBox1.Location = new System.Drawing.Point(93, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(119, 21);
-            this.comboBox1.TabIndex = 0;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(MCCommandGenerator.Text.Commands);
+            comboBox1.Location = new System.Drawing.Point(93, 19);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new System.Drawing.Size(119, 21);
+            comboBox1.TabIndex = 0;
             // 
             // label1
             // 
@@ -82,12 +84,12 @@ namespace MCCommandGenerator
             this.AlphaLabel.Name = "AlphaLabel";
             this.AlphaLabel.Size = new System.Drawing.Size(277, 13);
             this.AlphaLabel.TabIndex = 2;
-            this.AlphaLabel.Text = "Note: This is an early-alpha version of the program. It is far from being complete. It cannot even generate anything yet.\nSo until this is finished, you may want to use another generator.";
+            this.AlphaLabel.Text = "Note: This is an early-alpha version of the program.\nIt is far from being complete. It cannot even generate anything yet.\nSo until this is finished, you may want to use another generator.";
             //
             // helpProvider1
             //
-            this.helpProvider1.SetShowHelp(this.comboBox1, true);
-            this.helpProvider1.SetHelpString(this.comboBox1, "Select a command.\nNot much else to say about this.");
+            this.helpProvider1.SetShowHelp(comboBox1, true);
+            this.helpProvider1.SetHelpString(comboBox1, "Select a command.\nNot much else to say about this.");
             // 
             // Form1
             // 
@@ -96,7 +98,7 @@ namespace MCCommandGenerator
             this.ClientSize = new System.Drawing.Size(1098, 608);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AlphaLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -111,30 +113,30 @@ namespace MCCommandGenerator
         }
         public void CheckForCommand()
         {
-            switch (this.comboBox1.Text)
+            switch (comboBox1.Text)
             {
                 case "advancement":
-                    this.radioButton1 = new System.Windows.Forms.RadioButton();
-                    this.radioButton1.AutoSize = true;
-                    this.radioButton1.Location = new System.Drawing.Point(230, 21);
-                    this.radioButton1.Name = "radioButton1";
-                    this.radioButton1.Size = new System.Drawing.Size(85, 17);
-                    this.radioButton1.TabIndex = 2;
-                    this.radioButton1.TabStop = true;
-                    this.radioButton1.Text = "give";
-                    this.radioButton1.UseVisualStyleBackColor = true;
-                    this.Controls.Add(this.radioButton1);
+                    radioButton1 = new System.Windows.Forms.RadioButton();
+                    radioButton1.AutoSize = true;
+                    radioButton1.Location = new System.Drawing.Point(230, 21);
+                    radioButton1.Name = "radioButton1";
+                    radioButton1.Size = new System.Drawing.Size(85, 17);
+                    radioButton1.TabIndex = 2;
+                    radioButton1.TabStop = true;
+                    radioButton1.Text = "give";
+                    radioButton1.UseVisualStyleBackColor = true;
+                    this.Controls.Add(radioButton1);
 
-                    this.radioButton2 = new System.Windows.Forms.RadioButton();
-                    this.radioButton2.AutoSize = true;
-                    this.radioButton2.Location = new System.Drawing.Point(290, 21);
-                    this.radioButton2.Name = "radioButton2";
-                    this.radioButton2.Size = new System.Drawing.Size(85, 17);
-                    this.radioButton2.TabIndex = 3;
-                    this.radioButton2.TabStop = true;
-                    this.radioButton2.Text = "remove";
-                    this.radioButton2.UseVisualStyleBackColor = true;
-                    this.Controls.Add(this.radioButton2);
+                    radioButton2 = new System.Windows.Forms.RadioButton();
+                    radioButton2.AutoSize = true;
+                    radioButton2.Location = new System.Drawing.Point(290, 21);
+                    radioButton2.Name = "radioButton2";
+                    radioButton2.Size = new System.Drawing.Size(85, 17);
+                    radioButton2.TabIndex = 3;
+                    radioButton2.TabStop = true;
+                    radioButton2.Text = "remove";
+                    radioButton2.UseVisualStyleBackColor = true;
+                    this.Controls.Add(radioButton2);
 
                     this.button2 = new System.Windows.Forms.Button();
                     this.button2.Location = new System.Drawing.Point(480,19);
@@ -165,6 +167,30 @@ namespace MCCommandGenerator
                     comboBox2.Size = new System.Drawing.Size(48, 21);
                     comboBox2.TabIndex = 1;
                     this.Controls.Add(comboBox2);
+
+                    checkBox1.AutoSize = true;
+                    checkBox1.Location = new System.Drawing.Point(580, 23);
+                    checkBox1.Name = "checkBox1";
+                    checkBox1.Size = new System.Drawing.Size(80, 17);
+                    checkBox1.TabIndex = 25;
+                    checkBox1.Text = "Show advancements";
+                    checkBox1.Click += new EventHandler(CheckBox1Changed);
+                    if (MCCommandGenerator.Values.AdvancementShowAdvancements == true) checkBox1.Checked = true;
+                    else checkBox1.Checked = false;
+                    checkBox1.UseVisualStyleBackColor = true;
+                    this.Controls.Add(checkBox1);
+
+                    checkBox2.AutoSize = true;
+                    checkBox2.Location = new System.Drawing.Point(730, 23);
+                    checkBox2.Name = "checkBox2";
+                    checkBox2.Size = new System.Drawing.Size(80, 17);
+                    checkBox2.TabIndex = 25;
+                    checkBox2.Text = "Show Recipes";
+                    checkBox2.Click += new EventHandler(CheckBox2Changed);
+                    if (MCCommandGenerator.Values.AdvancementShowRecipes == true) checkBox2.Checked = true;
+                    else checkBox2.Checked = false;
+                    checkBox2.UseVisualStyleBackColor = true;
+                    this.Controls.Add(checkBox2);
                     break;
                 default:
                     MessageBox.Show("This command is not supported yet. Please wait for a new release.", "No", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -212,19 +238,29 @@ namespace MCCommandGenerator
                 default: break;
             }
         }
+        private void CheckBox1Changed(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked) checkBox2.Checked = false;
+        }
+        private void CheckBox2Changed(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked) checkBox1.Checked = false;
+        }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        public static System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.HelpProvider helpProvider1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        public static System.Windows.Forms.RadioButton radioButton1;
+        public static System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         public static System.Windows.Forms.ComboBox comboBox2;
+        public static System.Windows.Forms.CheckBox checkBox1;
+        public static System.Windows.Forms.CheckBox checkBox2;
 
         private System.Windows.Forms.Label AlphaLabel;
     }
