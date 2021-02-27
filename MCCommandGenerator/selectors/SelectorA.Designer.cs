@@ -153,7 +153,7 @@ namespace MCCommandGenerator
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new System.Drawing.Point(1, 1);
+            radioButton1.Location = new System.Drawing.Point(48, 1);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new System.Drawing.Size(43, 17);
             radioButton1.TabIndex = 8;
@@ -166,7 +166,7 @@ namespace MCCommandGenerator
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new System.Drawing.Point(50, 1);
+            radioButton2.Location = new System.Drawing.Point(97, 1);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new System.Drawing.Size(47, 17);
             radioButton2.TabIndex = 9;
@@ -193,7 +193,7 @@ namespace MCCommandGenerator
             {
                 comboBox2.Text = "Error: " + e.Message;
             }
-            comboBox2.Size = new System.Drawing.Size(153, 21);
+            comboBox2.Size = new System.Drawing.Size(200, 21);
             comboBox2.TabIndex = 10;
             // 
             // label4
@@ -319,7 +319,7 @@ namespace MCCommandGenerator
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            this.helpProvider1.SetHelpString(comboBox3, "Sets the gamemode the player must be in.\nEnable \"not\" if the player should not be in the selected gamemode.");
+            this.helpProvider1.SetHelpString(comboBox3, "Sets the gamemode the player must be in.\nEnable \"not\" if you want to select every player that isn't in this gamemode.");
             comboBox3.Items.AddRange(MCCommandGenerator.Text.Gamemodes);
             comboBox3.Location = new System.Drawing.Point(82, 195);
             comboBox3.Name = "comboBox3";
@@ -428,7 +428,7 @@ namespace MCCommandGenerator
             //
             // textBox12
             //
-            this.helpProvider1.SetHelpString(textBox12, "The name of the player.\nEnable \"not\" if the player should not have this name.");
+            this.helpProvider1.SetHelpString(textBox12, "The name of the player.\nEnable \"not\" if you want to select every player that doesn't have this name.");
             textBox12.Location = new System.Drawing.Point(55, 312);
             textBox12.Name = "textBox3";
             this.helpProvider1.SetShowHelp(textBox12, true);
@@ -799,7 +799,7 @@ namespace MCCommandGenerator
             //
             // textBox20
             //
-            this.helpProvider1.SetHelpString(textBox20, "The tags of the player.\nSeperate multiple tags with a comma.\nSet a \"!\" in front of the tag if the player should not have this tag.");
+            this.helpProvider1.SetHelpString(textBox20, "The tags of the player.\nSeperate multiple tags with a comma.\nSet a \"!\" in front of the tag if you want to select every player that doesn't have this tag.");
             textBox20.Location = new System.Drawing.Point(342, 197);
             textBox20.Name = "textBox20";
             this.helpProvider1.SetShowHelp(textBox20, true);
@@ -818,7 +818,7 @@ namespace MCCommandGenerator
             //
             // textBox21
             //
-            this.helpProvider1.SetHelpString(textBox21, "The team(s) the player is in.\nSeperate multiple teams with a comma.\nSet a \"!\" in front of the team if the player should not be in this team.");
+            this.helpProvider1.SetHelpString(textBox21, "The team(s) the player is in.\nSeperate multiple teams with a comma.\nSet a \"!\" in front of the team if you want to select every player that isn't in this team.");
             textBox21.Location = new System.Drawing.Point(360, 232);
             textBox21.Name = "textBox21";
             this.helpProvider1.SetShowHelp(textBox21, true);

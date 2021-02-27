@@ -14,8 +14,16 @@ namespace MCCommandGenerator
         public static bool AdvancementGive = false;
         public static bool AdvancementRemove = false;
         public static bool AdvancementSelector = false;
-        public static bool AdvancementShowAdvancements = false;
-        public static bool AdvancementShowRecipes = false;
+        public static short AdvancementSelectedAdvancement = -1;
+        public static short AdvancementSelectedRecipeBuilding = -1;
+        public static short AdvancementSelectedRecipeDecoration = -1;
+        public static short AdvancementSelectedRecipeRedstone = -1;
+        public static short AdvancementSelectedRecipeTransportation = -1;
+        public static short AdvancementSelectedRecipeMisc = -1;
+        public static short AdvancementSelectedRecipeFood = -1;
+        public static short AdvancementSelectedRecipeTools = -1;
+        public static short AdvancementSelectedRecipeCombat = -1;
+        public static short AdvancementSelectedRecipeBrewing = -1;
         // Selector
         public static short Selector = -1;
         public static short SelectorAdvancement = -1;

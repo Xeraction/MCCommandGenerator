@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MCCommandGenerator.util;
 
 namespace MCCommandGenerator
 {
@@ -16,7 +17,11 @@ namespace MCCommandGenerator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Update.CheckForUpdates();
-            if (!IsDownloading) Application.Run(new Form1());
+            if (!IsDownloading)
+            {
+                SetIcon.addIcon();
+                Application.Run(new Form1());
+            }
         }
     }
 }

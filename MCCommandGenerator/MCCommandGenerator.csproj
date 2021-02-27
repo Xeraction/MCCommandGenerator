@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Text.cs" />
     <Compile Include="Update.cs" />
+    <Compile Include="util\SetIcon.cs" />
     <Compile Include="Values.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
