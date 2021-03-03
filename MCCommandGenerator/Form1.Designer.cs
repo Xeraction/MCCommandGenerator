@@ -106,11 +106,14 @@ namespace MCCommandGenerator
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Minecraft Command Generator";
-            this.Icon = new System.Drawing.Icon("resources/icon.ico");
+            try
+            {
+                this.Icon = new System.Drawing.Icon("C:/ProgramData/MCCG/icon.ico");
+            }
+            catch { }
             this.ShowIcon = true;
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         public void CheckForCommand()
         {

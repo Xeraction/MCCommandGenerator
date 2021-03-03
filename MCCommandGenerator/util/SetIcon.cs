@@ -13,17 +13,28 @@ namespace MCCommandGenerator.util
     {
         public static void addIcon()
         {
-            if (!File.Exists("/resources/icon.ico"))
+            if (!File.Exists("C:/ProgramData/MCCG"))
             {
                 try
                 {
-                    Directory.CreateDirectory("resources");
+                    try
+                    {
+                        Directory.CreateDirectory("C:/ProgramData/MCCG");
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Couldn't create program folder. (" + e.Message + ")", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Application.Exit();
+                        return;
+                    }
                     var client = new WebClient();
-                    client.DownloadFile("http://xeraction.7m.pl/mccg/icon.ico", "resources/icon.ico");
+                    client.DownloadFile("http://xeraction.7m.pl/mccg/icon.ico", "C:/ProgramData/MCCG/icon.ico");
                 }
                 catch
                 {
                     MessageBox.Show("Couldn't set the icon because of missing internet connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    return;
                 }
             }
         }
