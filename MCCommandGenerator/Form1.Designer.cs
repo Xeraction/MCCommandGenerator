@@ -372,6 +372,15 @@ namespace MCCommandGenerator
                     this.label12.Size = new System.Drawing.Size(75, 17);
                     this.label12.TabIndex = 1;
                     this.label12.Text = "Brewing:";
+
+                    this.label13 = new System.Windows.Forms.Label();
+                    this.label13.AutoSize = true;
+                    this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+                    this.label13.Location = new System.Drawing.Point(705, 298);
+                    this.label13.Name = "label13";
+                    this.label13.Size = new System.Drawing.Size(75, 17);
+                    this.label13.TabIndex = 1;
+                    this.label13.Text = "You can only choose one recipe! Leave the other boxes blank.";
                     break;
                 default:
                     MessageBox.Show("This command is not supported yet. Please wait for a new release.", "No", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -443,6 +452,7 @@ namespace MCCommandGenerator
                 this.Controls.Remove(this.label11);
                 this.Controls.Remove(comboBox12);
                 this.Controls.Remove(this.label12);
+                this.Controls.Remove(this.label13);
             }
             else
             {
@@ -472,6 +482,7 @@ namespace MCCommandGenerator
                 this.Controls.Add(this.label11);
                 this.Controls.Add(comboBox12);
                 this.Controls.Add(this.label12);
+                this.Controls.Add(this.label13);
                 this.Controls.Remove(comboBox3);
             }
             else
@@ -494,6 +505,7 @@ namespace MCCommandGenerator
                 this.Controls.Remove(this.label11);
                 this.Controls.Remove(comboBox12);
                 this.Controls.Remove(this.label12);
+                this.Controls.Remove(this.label13);
             }
         }
 
@@ -530,6 +542,7 @@ namespace MCCommandGenerator
         private System.Windows.Forms.Label label11;
         public static System.Windows.Forms.ComboBox comboBox12;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
 
         private System.Windows.Forms.Label AlphaLabel;
     }
