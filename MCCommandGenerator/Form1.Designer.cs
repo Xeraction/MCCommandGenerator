@@ -35,6 +35,7 @@ namespace MCCommandGenerator
             this.AlphaLabel = new System.Windows.Forms.Label();
             checkBox1 = new System.Windows.Forms.CheckBox();
             checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -76,6 +77,16 @@ namespace MCCommandGenerator
             this.label2.TabIndex = 2;
             this.label2.Text = "Click on a textbox and press \"F1\" to display some help.";
             //
+            // button3
+            //
+            this.button3.Location = new System.Drawing.Point(12, 52);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Reset";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new EventHandler(this.ResetAll);
+            //
             // AlphaLabel
             //
             this.AlphaLabel.AutoSize = true;
@@ -114,6 +125,20 @@ namespace MCCommandGenerator
             this.ShowIcon = true;
             this.ResumeLayout(false);
             this.PerformLayout();
+        }
+        private void ResetAll(object sender, EventArgs e)
+        {
+            this.Controls.Remove(radioButton1);
+            this.Controls.Remove(radioButton2);
+            this.Controls.Remove(button2);
+            this.Controls.Remove(label3);
+            this.Controls.Remove(comboBox2);
+            this.Controls.Remove(checkBox1);
+            this.Controls.Remove(checkBox2);
+            comboBox1.Text = "";
+            SelectorControl.ResetAll();
+            this.Controls.Remove(button3);
+            this.Controls.Add(button1);
         }
         public void CheckForCommand()
         {
@@ -381,6 +406,25 @@ namespace MCCommandGenerator
                     this.label13.Size = new System.Drawing.Size(75, 17);
                     this.label13.TabIndex = 1;
                     this.label13.Text = "You can only choose one recipe! Leave the other boxes blank.";
+
+                    this.panel1 = new System.Windows.Forms.Panel();
+                    this.panel1.AutoSize = true;
+                    this.panel1.Location = new System.Drawing.Point(1600, 600);
+                    this.panel1.Controls.Add(radioButton3);
+                    this.Controls.Add(this.panel1);
+
+                    radioButton3 = new System.Windows.Forms.RadioButton();
+                    radioButton3.AutoSize = true;
+                    radioButton3.Location = new System.Drawing.Point(0, 0);
+                    radioButton3.Name = "radioButton3";
+                    radioButton3.Size = new System.Drawing.Size(85, 17);
+                    radioButton3.TabIndex = 2;
+                    radioButton3.TabStop = true;
+                    radioButton3.Text = "everything";
+                    radioButton3.UseVisualStyleBackColor = true;
+
+                    this.Controls.Remove(button1);
+                    this.Controls.Add(button3);
                     break;
                 default:
                     MessageBox.Show("This command is not supported yet. Please wait for a new release.", "No", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -543,6 +587,12 @@ namespace MCCommandGenerator
         public static System.Windows.Forms.ComboBox comboBox12;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel1;
+        public static System.Windows.Forms.RadioButton radioButton3;
+        public static System.Windows.Forms.RadioButton radioButton4;
+        public static System.Windows.Forms.RadioButton radioButton5;
+        public static System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Button button3;
 
         private System.Windows.Forms.Label AlphaLabel;
     }

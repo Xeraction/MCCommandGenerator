@@ -16,7 +16,7 @@ namespace MCCommandGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Update.CheckForUpdates();
+            Update.CheckForUpdates();
             if (!IsDownloading)
             {
                 SetIcon.addIcon();
